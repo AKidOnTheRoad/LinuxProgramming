@@ -1,0 +1,7 @@
+#ignore all lib file
+*.[ao]
+*.so
+a.out
+*/exe/
+*/obj/
+
