@@ -5,20 +5,20 @@ C_FLAGS = -c
 MKDIR = mkdir 
 RM = rm -rf
 all:target
-GCC = g${CC}
+CC = gcc
 
 target: obj obj/main.o
-	${GCC} -o $@ ${word 2,$^}
+	$(CC) -o $@ ${word 2,$^}
 
 obj:
 	${MKDIR} obj
 
 obj/main.o:point_main.c
-	${CC} ${C_FLAGS} -o $@ $<
+	$(CC) $(C_FLAGS) -o $@ $<
 
 clean:
-	${RM} obj
-	${RM} target
+	$(RM) obj
+	$(RM) target
 
 run:
 	./target
