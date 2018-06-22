@@ -18,7 +18,7 @@ $(OBJ):
 	@$(MKDIR) $@
 
 $(OBJ)%.o: $(SRC)%.c
-	${CC} $(CFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) -o $@ $<
 
 #$(OBJ)target.o:$(SRC)TestEndian.c $(INC)TestEndian.h
 #	gcc -c -I$(INC) -o $@ $<

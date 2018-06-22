@@ -87,8 +87,8 @@ int main(int argc, const char *argv[])
 	sem_destroy(&mysemid2);
 	sem_destroy(&mysemid1);
 
-	pthread_cancel(mythread1);
-	pthread_cancel(mythread2);
+//	pthread_cancel(mythread1);
+//	pthread_cancel(mythread2);
 	
 #ifdef DEBUG
 	printf("123456!!!\n");
