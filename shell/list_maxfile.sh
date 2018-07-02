@@ -6,7 +6,11 @@
 
 function list_maxfile() 
 {
-	find . \( -name ".git*" -prune \) -o \( -type f -exec stat -c "%s %n" {} \; \) | sort -rn | head -10 
+	find "$1" \( -name ".git*" -prune \) -o \( -type f -exec stat -c "%s %n" {} \; \) | sort -rn | head -10 
 }
 
-list_maxfile
+if [ $# -lt 1 ]; then
+	echo lose arguments.
+	exit 1
+fi
+list_maxfile  "$1"
