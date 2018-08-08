@@ -10,6 +10,9 @@ string:string.o
 string_cmp:string_cmp.o
 	$(CXX) -o $@ $<
 
+throw_str:throw_str.o
+	$(CXX) -o $@ $<
 clean:
 	@rm -rf string string.o
 	@rm -rf string_cmp string_cmp.o
+	@rm -rf throw_str throw_str.o
