@@ -2,11 +2,12 @@
 #include <string>
 #include <vector>
 #include <cctype>
+#include <exception>
 #include <stdexcept>
 
 struct MyException: public std::exception 
 {
-	const char *what() const throw() {
+	const char *what() const throw() {//overload xxx.what() function.Notice the format about it.
 		return "C++ Exception";
 	}
 };
