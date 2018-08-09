@@ -12,3 +12,5 @@ pipe
 process
 socket
 shell
+lua
+c++

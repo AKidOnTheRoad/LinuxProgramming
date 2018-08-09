@@ -1,6 +1,6 @@
 
 CC = gcc
-C_FLAGS = -c -I.
+CFLAGS = -I.
 
 .PHONY:clean shmset shmget 
 

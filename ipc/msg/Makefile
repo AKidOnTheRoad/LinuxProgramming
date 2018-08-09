@@ -1,6 +1,6 @@
 
 CC = gcc
-C_FLAGS = -c -I.
+CFLAGS = -I.
 .PHONY:all clean msgcreate msgsend msgrecv
 
 all: msgcreate msgsend msgrecv
@@ -16,3 +16,4 @@ msgrecv:msgrecv.o
 
 clean:
 	@rm -rf msgcreate msgsend msgrecv
+	@rm -rf *.o

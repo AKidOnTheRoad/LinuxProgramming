@@ -1,6 +1,5 @@
 
 CC = gcc
-C_FLAGS= -c 
 .PHONY: create clean count 
 exe:
 	mkdir exe

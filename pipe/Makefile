@@ -1,6 +1,5 @@
 .PHONY: pipe fifo clean
 
-C_FLAGS = -c 
 CC = gcc
 
 pipe:pipe_process.o
