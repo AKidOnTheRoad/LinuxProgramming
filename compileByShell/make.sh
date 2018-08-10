@@ -17,10 +17,10 @@ do
 	then
 		exit 0
 	fi
-		case $mode in
+	case $mode in
 		1)
 			echo ${array_match[$mode - 1]} > ./env.mk
-			  exec make clean all ;;
+			exec make clean all ;;
 		2)
 			;;
 		*)
