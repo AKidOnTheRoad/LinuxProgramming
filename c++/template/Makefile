@@ -23,6 +23,9 @@ template_class:template_class.o
 template_overload:template_overload.o
 	$(CXX) -o $@ $<
 
+template_overload_inclass:template_overload_inclass.o
+	$(CXX) -o $@ $<
+
 clean:
 	@rm -rf box box.o
 	@rm -rf arg arg.o
@@ -30,3 +33,4 @@ clean:
 	@rm -rf non-type-template non-type-template.o
 	@rm -rf template_class template_class.o
 	@rm -rf template_overload template_overload.o
+	@rm -rf template_overload_inclass template_overload_inclass.o

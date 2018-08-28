@@ -1,49 +1,31 @@
 #include <iostream>
 
 using namespace std;
-//模板类的所有成员函数以及友元函数都在类外部进行定义
-
-/////不同编译器对格式要求不一样，对于g++来说必须要先声明模版类和模板函数
-template <typename T>
-class Box;
-
-template <typename T>
-ostream& operator<<(ostream& out, Box<T> &b1);
-/////
-
-
+//所有成员函数或者类的友元函数都在类的内部进行声明和定义
 template <typename T> 
 class Box {
-	friend ostream& operator<<<T> (ostream& out, Box &b1);
+	friend ostream& operator<< (ostream& out, Box &b1)
+	{
+		out << "a: " << b1.a << "b: " << b1.b << endl;	
+		return out;
+	}
 	public:
-		Box(T a, T b);
+		Box(T a, T b)
+		{
+			this->a = a;
+			this->b = b;
+		}
 		~Box(){};
-		Box operator+(Box &b1);
+		Box operator+(Box &b1)
+		{
+			Box tmp(a + b1.a, b + b1.b);
+			return tmp;
+		}
 	private:
 		T a;
 		T b;
 };
 
-template <typename T>
-Box<T>::Box(T a, T b)
-{
-	this->a = a;
-	this->b = b;
-}
-
-template <typename T>
-Box<T> Box<T>::operator+(Box<T> &b1)
-{
-	Box tmp(a + b1.a, b + b1.b);
-	return tmp;
-}
-
-template <typename T>
-ostream& operator<<(ostream& out, Box<T> &b1)
-{
-	out << "a: " << b1.a << "b: " << b1.b << endl;	
-	return out;
-}
 /************************************************************************/
 /*  Function Name   : main                                              */
 /*  Description     :                                                   */
